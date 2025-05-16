@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --primary-color: #3498db;
+  --primary-dark: #2980b9;
+  --secondary-color: #2ecc71;
+  --secondary-dark: #27ae60;
+  --accent-color: #e74c3c;
+  --dark-color: #2c3e50;
+  --light-color: #ecf0f1;
+  --gray-color: #95a5a6;
+  --transition: all 0.3s ease;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-strong: 0 10px 25px rgba(0, 0, 0, 0.15);
+  --border-radius: 8px;
+}
+
+.app1 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.container1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  flex: 1;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Notification styling */
+.notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.notification {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
+  transform: translateX(120%);
+  transition: transform 0.3s ease;
+  max-width: 350px;
+  animation: slideIn 0.3s forwards;
+}
+
+.notification.show {
+  transform: translateX(0);
+}
+
+.notification.hide {
+  animation: slideOut 0.3s forwards;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notification-icon {
+  animation: pulse 1.5s infinite;
+}
+
+.notification.success i {
+  color: var(--secondary-color);
+}
+
+.notification.error i {
+  color: var(--accent-color);
+}
+
+.notification.info i {
+  color: var(--primary-color);
+}
+
+@keyframes slideIn {
+  from { transform: translateX(120%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOut {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(120%); opacity: 0; }
+}
+
+/* Empty state styling */
+.empty-message {
+  text-align: center;
+  padding: 30px;
+  color: #777;
+  font-style: italic;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Section styling */
+.section {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 25px;
+  margin-bottom: 30px;
+  transition: var(--transition);
+  animation: fadeIn 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.section:hover {
+  box-shadow: var(--shadow-strong);
+  transform: translateY(-5px);
+}
+
+.section h2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+  color: var(--primary-color);
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--secondary-color);
+  border-radius: 3px;
+  transition: var(--transition);
+}
+
+.section:hover h2::after {
+  width: 100px;
+}
+
+.section h2 svg {
+  margin-right: 10px;
+  color: var(--secondary-color);
+  transition: var(--transition);
+}
+
+.section:hover h2 svg {
+  transform: scale(1.2);
+}
+
+/* Button styling */
+.btn {
+  transition: var(--transition);
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 10px 20px;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* List item animations */
+.list-item-enter {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.list-item-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.list-item-exit {
+  opacity: 1;
+}
+
+.list-item-exit-active {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section {
+    padding: 20px 15px;
+  }
+  
+  .container {
+    padding: 15px;
+  }
+}

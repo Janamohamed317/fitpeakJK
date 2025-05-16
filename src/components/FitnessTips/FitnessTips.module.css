@@ -1,0 +1,232 @@
+.container {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #0a1a0a 0%, #001c10 100%);
+}
+
+
+.logo {
+  font-size: 3.6rem;
+  margin-bottom: 1.2rem;
+  animation: floatLogo 2.2s infinite alternate cubic-bezier(.68,-0.55,.27,1.55);
+  filter: drop-shadow(0 4px 22px #00ff8050);
+}
+
+@keyframes floatLogo {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-14px) scale(1.12); }
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 2.3rem;
+  font-size: 2.3rem;
+  color: #00ff80;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 16px rgba(0,255,128,0.15);
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  touch-action: pan-x;
+}
+
+.tipCard {
+  background: #111;
+  border-radius: 32px;
+  padding: 2.8rem 2.4rem;
+  box-shadow: 0 8px 32px rgba(0,255,128,0.09), 0 2px 8px rgba(0,0,0,0.18);
+  width: 100%;
+  max-width: 600px;
+  border: 2.5px solid #00ff80;
+  transition: box-shadow 0.33s, background 0.4s, transform 0.29s;
+  animation: fadeInCard 0.8s;
+  position: relative;
+  color: #00ff80;
+  font-size: 1.23rem;
+  font-family: 'Cairo', 'Arial', sans-serif;
+  letter-spacing: 0.7px;
+  overflow: hidden;
+  margin: 0 1rem;
+}
+
+.container,
+.carousel,
+.tipCard,
+.title,
+.logo,
+.tipCard *,
+.container * {
+  color: #00ff80 !important;
+}
+
+.title {
+  color: #00ff80 !important;
+  text-shadow: none !important;
+}
+
+.logo {
+  color: #00ff80 !important;
+  filter: none !important;
+}
+
+
+
+.tipCard::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -60px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, #00ff80 0%, transparent 80%);
+  opacity: 0.13;
+  z-index: 0;
+  animation: floatGlow 5s linear infinite alternate;
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(0) scale(1); opacity: 0.13; }
+  100% { transform: translateY(18px) scale(1.08); opacity: 0.22; }
+}
+
+.tipCard > * {
+  position: relative;
+  z-index: 1;
+}
+
+.tipCard:active, .tipCard.touching {
+  transform: scale(0.97) rotate(-0.3deg);
+  box-shadow: 0 6px 22px 0 rgba(0,255,128,0.18), 0 2px 6px rgba(0,0,0,0.16);
+  background: #111 !important;
+  border: 2.5px solid #00ff80 !important;
+}
+
+body, .container, .container * {
+  color: #00ff80 !important;
+}
+
+
+@media (max-width: 700px) {
+  .tipCard {
+    padding: 1.3rem 0.7rem;
+    font-size: 1.01rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .tipCard {
+    padding: 1.3rem 0.7rem;
+    font-size: 0.98rem;
+  }
+  .carousel {
+    gap: 0.5rem;
+  }
+}
+
+@keyframes fadeInCard {
+  from { opacity: 0; transform: scale(0.97) translateY(18px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: none; }
+}
+
+.tipTitle {
+  color: #00ff80;
+
+  font-size: 2.1rem;
+  margin-bottom: 1.1rem;
+  background: linear-gradient(90deg, #00ff80 20%, #006400 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* text-fill-color is non-standard, using color: transparent instead */
+  color: transparent;
+  letter-spacing: 1.2px;
+  text-shadow: 0 2px 18px rgba(0,255,128,0.18), 0 1px 6px rgba(0,128,0,0.13);
+}
+
+.tipDesc {
+  font-size: 1.18rem;
+  line-height: 1.8;
+  color: #bbffbb;
+  text-shadow: 0 2px 8px rgba(0,255,128,0.11), 0 1px 6px rgba(0,128,0,0.07);
+  font-weight: 500;
+}
+
+.arrowButton {
+  background: linear-gradient(135deg, #00ff80 60%, #003300 100%);
+  color: #fff;
+  border: 2.5px solid #00ff80;
+  border-radius: 50%;
+  width: 54px;
+  height: 54px;
+  font-size: 2.3rem;
+  box-shadow: 0 4px 18px rgba(0,255,128,0.22), 0 1px 4px #001;
+  transition: background 0.22s, box-shadow 0.19s, transform 0.18s;
+  outline: none;
+  cursor: pointer;
+  margin: 0 0.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+
+.arrowButton:hover, .arrowButton:focus {
+  background: linear-gradient(135deg, #00ff80 60%, #005522 100%);
+  box-shadow: 0 8px 24px rgba(0,255,128,0.32);
+  transform: scale(1.12);
+}
+
+
+.arrowButton:active, .arrowButton.touching {
+  background: linear-gradient(135deg, #003300 80%, #00ff80 100%);
+  box-shadow: 0 1px 7px rgba(0,255,128,0.22);
+  transform: scale(0.93);
+}
+
+
+.dots {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.8rem;
+  justify-content: center;
+}
+
+.dot, .activeDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #003300;
+  box-shadow: 0 1px 4px #00ff8030;
+  transition: background 0.22s, transform 0.19s;
+  cursor: pointer;
+  border: 2px solid #00ff80;
+}
+.activeDot {
+  background-color: #00ff80;
+  transform: scale(1.35);
+  border: 2px solid #003300;
+}
+
+.dot:hover, .dot:focus {
+  background-color: rgba(0, 255, 128, 0.7);
+  transform: scale(1.2);
+}

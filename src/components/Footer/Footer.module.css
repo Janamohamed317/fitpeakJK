@@ -1,0 +1,25 @@
+.main_container {
+    background-color: rgb(32, 32, 32);
+    padding: 4rem;
+    height: auto;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+}
+
+.br_line {
+    width: 78%;
+}
+
+.quick_link:hover {
+    cursor: pointer;
+    scale: 1.1;
+    transition: all ease-in-out 0.3s;
+}
+
+.social_icon {
+    font-size: 2rem;
+}

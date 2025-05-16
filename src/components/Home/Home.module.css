@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.main_container {
+    font-family: "Montserrat", serif;
+    min-height: 60rem;
+    margin: 0;
+    padding: 0;
+}
+
+
+.hero_container {
+    position: relative;
+}
+
+.hero_img {
+    width: 100%;
+}
+
+.hero_span {
+    color: green;
+}
+
+.hero_txt_container {
+    top: 15vw;
+    left: 5vw;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero_btn {
+    /* max-width: 8rem; */
+    width: 10rem;
+    border: none;
+    color: white;
+    margin-top: 2rem;
+    margin-right: 58rem;
+    background-color: green;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    padding: 1.6rem;
+}
+
+.hero_btn:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(3, 255, 3);
+    scale: 0.9;
+    transition: all ease-in-out 0.4s;
+}
+
+.hero_txt {
+    font-weight: bold;
+    font-size: 3.5vw;
+    width: 25vw;
+}
+
+.about,
+.guide_container,
+.key_features_container {
+    padding: 3rem;
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about_header,
+.guide_header,
+.key_features_header {
+    font-size: 3rem;
+    color: rgb(26, 255, 0);
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.about_txt,
+.guide_li {
+    font-size: 1.8rem;
+}
+
+
+.li_bold {
+    font-weight: bold;
+}
+
+.hero2_container {
+    margin: 0;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 50rem;
+}
+
+.hero2_img {
+    width: 100%;
+    height: 100%;
+}
+
+.hero2_container::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.812);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.hero2_txt {
+    color: white;
+    position: absolute;
+    font-size: 5rem;
+    font-weight: bold;
+    top: 30%;
+    margin-left: 2rem;
+    z-index: 2;
+    width: 30%;
+}
+
+
+@media (max-width: 768px) {
+    .main_container {
+        padding-top: 2.6rem;
+    }
+}

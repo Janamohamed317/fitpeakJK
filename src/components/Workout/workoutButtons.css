@@ -1,0 +1,51 @@
+/* Botones */
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-end;
+}
+
+.deleteButton, .completeButton {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.deleteButton {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #c0392b;
+}
+
+.completeButton {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.completeButton:hover {
+  background-color: #27ae60;
+}
+
+/* Estado de completado */
+.workoutStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.workoutStatus.completed {
+  color: #2ecc71;
+  font-weight: 600;
+}

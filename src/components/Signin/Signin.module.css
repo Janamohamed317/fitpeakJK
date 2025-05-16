@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+html {
+  font-size: 62.5%;
+}
+
+.main_container {
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.form_container {
+  color: rgb(16, 164, 0);  
+  font-family: "Montserrat", serif;
+
+  background-color: rgb(32, 32, 32);
+  border: none;
+  border-radius: 1.5rem;
+  width: auto;
+  max-width: 60vw;
+  height: auto;
+  display: flex;
+  gap: 2vw;
+  justify-content: space-between;
+}
+
+.form_img {
+  width: 100%;
+  max-width: 30vw;
+  object-fit: cover;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+
+.Login_text {
+  font-size: 5rem;
+  margin-top: 2vw;
+  font-family: 'headers_font';
+  /* margin-right: 12vw; */
+}
+
+.form_inputs {
+  font-family: 'text_font';
+  font-size: 1.2rem;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Input_label {
+  font-size: 2rem;  
+  margin: 0;
+  align-self: flex-start;
+}
+
+.inputs {
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: #e9e9ca;
+  border: none;
+  margin-bottom: 0.5vw;
+  font-size: 1.5rem;
+}
+
+.error_text {
+  color: red;
+  font-size: 1.4rem;
+  max-width: 25rem;
+  width: 25rem;
+  margin-top: 1rem;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.form_checkbox_container {
+  display: flex;
+  justify-content: flex-end;
+  /* align-items: center; */
+  margin-top: 2rem;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.form_checkbox {
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+}
+
+.form_checkbox::before {
+  content: "";
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+  background-color: #fff;
+}
+
+.form_checkbox:checked::before {
+  transition: all 0.2s;
+  background-color: rgb(16, 164, 0);
+}
+
+.checkbox_label {
+  font-size: 1.2rem;
+  margin-bottom: 1.5vw;
+}
+
+.form_btn {
+  width: 100%;
+  padding: 1rem;
+  border: 0;
+  border-radius: 1.5rem;
+  color: white;
+  background-color: rgb(16, 164, 0);
+  font-size: 2rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.form_btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(10, 97, 0);
+  border: none;
+  transform: scale(0);
+  transform-origin: top right;
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.form_btn:hover:before {
+  transform: scale(1);
+}
+
+.form_btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.Login_text2 {
+  font-size: 1.6rem;
+  margin-top: 2vw;
+  margin-right: 0.5vw;
+}
+
+.Signup_text {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+@media (max-width: 1010px) {
+  .form_container {
+    flex-direction: column; 
+    max-width: 90vw; 
+    gap: 2rem; 
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form_img {
+    max-width: 100%;
+    border-radius: 1.5rem 1.5rem 0 0; 
+  }
+
+ 
+}
